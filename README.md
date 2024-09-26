@@ -119,11 +119,11 @@ Gambar 2c. Analisis Matriks Korelasi
 
 Pada _Gambar 2a. Analisis Multivariat_, dengan menggunakan fungsi _pairplot_ dari _library seaborn_, tampak terlihat relasi pasangan dalam dataset menunjukan pola acak. Pada pola sebaran data grafik pairplot, terterlihat bahwa _Size_ dan _Sweetness_ memiliki korelasi negatif menurun, yang mana semakin kecil ukuran buah rasa nya akan semakin manis.
 
-Pada _Gambar 2b. Analisis Karakteristik menggunakan box plot dengan membandingkan distribusi berbagai karakteristik apel antara apel yang diklasifikasikan dalam kualitas *Good* dan *Bad*. Sn Dengan sebaran data untuk berbagai fitur seperti *size, weight, sweetness, crunchiness, juiciness, ripeness, and acidity*.
+Pada _Gambar 2b. Analisis Karakteristik_ menggunakan box plot dengan membandingkan distribusi berbagai karakteristik apel antara apel yang diklasifikasikan dalam kualitas *Good* dan *Bad*. Sn Dengan sebaran data untuk berbagai fitur seperti *size, weight, sweetness, crunchiness, juiciness, ripeness, and acidity*.
 
 Pada _Gambar 2c. Analisis Matriks Korelasi_, merupakan _Correlation Matrix_ menunjukkan hubungan antar fitur dalam nilai korelasi. Jika diamati, fitur _Juiciness_ memiliki skor korelasi yang cukup besar `0.24` dengan fitur target _Acidity_ .
 
-### Data Preparation
+## Data Preparation
 Pada proses _Data Preparation_ dilakukan kegiatan seperti _Data Gathering_, _Data Assessing_, dan _Data Cleaning_. Pada proses Data Gathering, data diimpor sedemikian rupa agar bisa dibaca dengan baik menggunakan dataframe Pandas. Untuk proses Data Assessing, berikut adalah beberapa pengecekan yang dilakukan:
 
 - Duplicate data (data yang serupa dengan data lainnya).
