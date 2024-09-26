@@ -4,7 +4,7 @@
 
 Domain yang dipilih untuk proyek *machine learning* ini adalah **Pertanian** yang meninjau **Predictive Analytics: Kualitas Apel**  
 
-### Latar Belakang!
+### Latar Belakang
 
 ![Apple](https://github.com/user-attachments/assets/37ce2fed-7d9b-4604-aed0-c6caebb27c34)
 
