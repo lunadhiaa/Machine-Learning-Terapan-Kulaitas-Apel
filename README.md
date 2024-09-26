@@ -29,7 +29,7 @@ Tujuan dari proyek ini adalah:
 - Menganalisis data dengan melakukan univariate analysis dan multivariate analysis untuk mengetahui kolerasi matrix antar fitur dan mendeteksi outlier. Serta Memahami data dengan visualisasi. 
 - Melakukan proses data cleaning dan normalisai data agar mendapat prediksi yang baik.
 - Membuat beberapa Model prediksi machine learning untuk mendapatkan model yang paling baik dari beberapa model yang telah dibuat untuk prediksi kualitas apel. Diantaranya adalah menggunakan:
-    * Support Vector Machine (SVM) adalah algoritma yang digunakan untuk menemukan hyperplane dalam ruang N-dimensi (N - jumlah fitur) yang secara jelas mengklasifikasikan titik data. SVM dapat digunakan untuk menyelesaikan permasalahan klasifikasi, regresi, dan pendeteksian outlier.[[6](https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47)]
+    * Support Vector Machine (SVM) adalah algoritma yang digunakan untuk menemukan hyperplane dalam ruang N-dimensi (N - jumlah fitur) yang secara jelas mengklasifikasikan titik data. SVM dapat digunakan untuk menyelesaikan permasalahan klasifikasi, regresi, dan pendeteksian outlier.[[4](https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47)]
     * Random Forest adalah algoritma machine learning yang kuat yang dapat digunakan untuk berbagai tugas termasuk regresi dan klasifikasi. Ini adalah metode ensemble, yang berarti bahwa model random forest terdiri dari banyak decision tree kecil, yang disebut estimator, yang masing-masing menghasilkan prediksi mereka sendiri. Random forest menggabungkan prediksi estimator untuk menghasilkan prediksi yang lebih akurat .[[5](https://deepai.org/machine-learning-glossary-and-terms/random-forest)]
 
 ## Data Understanding
@@ -105,26 +105,27 @@ Pada kasus ini, rata-rata (mean) data "Size" adalah -0.51 dan standar deviasi da
 
 ### EDA - Multivariate Analysis
 
-![Multivariate Analysis](https://i.ibb.co/yNHmpNZ/EDA-MULTIVARIATE.png)
+![multi1](https://github.com/user-attachments/assets/d926d5c4-8dfd-4a11-acf8-5082ebdf9340)
 
 Gambar 2a. Analisis Multivariat
 
-![Quality Apple](https://i.postimg.cc/52W5ns26/karakter-bad-good.png)
+![multi2](https://github.com/user-attachments/assets/f615c6c9-3e5d-4f09-9be9-42bb4c1184a4)
 
 Gambar 2b. Analisis Karakteristik apel
 
-![Multivariate Analysis](https://i.ibb.co/WBQ5gPy/Matrix-corelasi.png)
+![multi3](https://github.com/user-attachments/assets/b3bd07ae-426a-4984-8776-42718fc7c2f3)
 
 Gambar 2c. Analisis Matriks Korelasi
 
 Pada _Gambar 2a. Analisis Multivariat_, dengan menggunakan fungsi _pairplot_ dari _library seaborn_, tampak terlihat relasi pasangan dalam dataset menunjukan pola acak. Pada pola sebaran data grafik pairplot, terterlihat bahwa _Size_ dan _Sweetness_ memiliki korelasi negatif menurun, yang mana semakin kecil ukuran buah rasa nya akan semakin manis.
 
-Pada _Gambar 2b. Analisis Karakteristik ,distribusi karakteristik apel berdasarkan kualitas baik dan buruk, menggunakan boxplot untuk masing-masing karakteristik.
+Pada _Gambar 2b. Analisis Karakteristik menggunakan box plot dengan membandingkan distribusi berbagai karakteristik apel antara apel yang diklasifikasikan dalam kualitas *Good* dan *Bad*. Sn Dengan sebaran data untuk berbagai fitur seperti *size, weight, sweetness, crunchiness, juiciness, ripeness, and acidity*.
 
 Pada _Gambar 2c. Analisis Matriks Korelasi_, merupakan _Correlation Matrix_ menunjukkan hubungan antar fitur dalam nilai korelasi. Jika diamati, fitur _Juiciness_ memiliki skor korelasi yang cukup besar `0.24` dengan fitur target _Acidity_ .
 
 ### Data Preparation
 Pada proses _Data Preparation_ dilakukan kegiatan seperti _Data Gathering_, _Data Assessing_, dan _Data Cleaning_. Pada proses Data Gathering, data diimpor sedemikian rupa agar bisa dibaca dengan baik menggunakan dataframe Pandas. Untuk proses Data Assessing, berikut adalah beberapa pengecekan yang dilakukan:
+
 - Duplicate data (data yang serupa dengan data lainnya).
 - Missing value (data atau informasi yang "hilang" atau tidak tersedia)
 - Outlier (data yang menyimpang dari rata-rata sekumpulan data yang ada).
@@ -138,7 +139,7 @@ Pada proses _Data Cleaning_ yang dilakukan adalah seperti:
 | ------ | ------ |------ | ------ | ------ | ------ |------ | ------ |------ |
 | NaN | NaN | NaN | NaN |NaN | NaN| NaN	| Created_by_Nidula_Elgiriyewithana  | NaN |
 
-Tabel 3. Data Preparation
+Tabel 3. Melihat data missing value
 
 Pada proyek kasus ini tidak ditemukannya data duplikat, tetapi ditemukannya _missing value_. Adapaun metode yang digunakan untuk mengatasi hal ini adalah dengan menerapkan _Dropping_ yaitu menghapus data yang _missing_ digunakannya metode ini dikarenakan jumlah missing value hanya berjumlah `1`. Lihat _Tabel 2. Melihat data missing value_. Adapun untuk _outlier_ juga dilakukan dengan metode _dropping_ menggunakan metode IQR.  IQR dihitung dengan mengurangkan kuartil ketiga (Q3) dari kuartil pertama (Q1) sebagaimana rumus berikut.
 
@@ -179,6 +180,11 @@ Kerugian _Random Forest_ :
 - Membutuhkan banyak waktu komputasi untuk pelatihan. 
 - Sulit untuk diinterpretasikan.
 
+Parameter yang digunakan adalah:
+- `kernel` memetakan data input ke ruang dimensi yang lebih tinggi sehingga memungkinkan pemisahan data yang lebih baik.
+- `n_estimators` Jumlah pohon keputusan yang akan dibuat dalam ensemble.
+- `random_stat` pengambilan sampel secara acak.
+
 ## Evaluation
 Dalam tahap evaluasi, metrik yang digunakan adalah `accuracy`
 Accuracy didapatkan dengan menghitung persentase dari jumlah prediksi yang benar dibagi dengan jumlah seluruh prediksi. Rumus:
@@ -202,13 +208,23 @@ Berikut hasil accuracy model yang latih:
 
 Tabel 4. Hasil Accuracy
 
-![Evaluation Model](https://i.postimg.cc/XqCTwssn/evaluation.png)
+![eval1](https://github.com/user-attachments/assets/fa012554-1ec6-43fd-b6f9-8f878eb66dad)
+
 3a. Model Evaluation SVM
 
-![Evaluation Model](https://i.postimg.cc/htZKK167/rf-chart.png)
+![eval2](https://github.com/user-attachments/assets/ef4dcf05-6331-4bb7-8b0a-101b07d7754b)
+
 3b. Model Evaluation Random Forest
 
-Secara Keseluruhan, Model Random Forest mencapai akurasi 89% dalam mengklasifikasikan kualitas apel. Kelas "Kualitas Buruk" dan "Kualitas Baik" memiliki performa seimbang, dengan presisi, perolehan, dan skor F1 masing-masing sebesar 89%. Hal ini menunjukkan bahwa model mampu membedakan kedua kategori kualitas dengan baik. Dengan begitu, Model Random Forest mengahsilkan model yang lebih baik daripada model SVM.
+Dilihat dari _Tabel 4. Hasil Accuracy_ dan _Gambar 3a. Model Evaluatin SVM_ dapat diketahui bahwa hasil pemodelan menggunakan algoritma SVM menghasilkan akurasi 77% dengan hasil Confusion Matrix  model yang memiliki total 385 prediksi benar (290 untuk "Bad" dan 295 untuk "Good"), dan 173 prediksi salah (83 False Positive dan 90 False Negative). Juga pada hasil ROC Curve menunjukkan bahwa model memiliki performa yang cukup baik dengan nilai AUC 0.85, yang berarti model memiliki kemampuan yang baik dalam membedakan antara kelas "Good" dan "Bad".
+
+Secara keseluruhan, model SVM ini menunjukkan performa yang cukup baik, meskipun masih terdapat beberapa kesalahan dalam prediksi kedua kelas.
+
+Sedangkan, dilihat dari  _Tabel 4. Hasil Accuracy_ dan _Gambar 3b. Model Evaluatin Random Forest_ menghasilkan model dengan akurasi lebih tinggi yaitu 89%. Dari Confusion Matrix, model berhasil membuat 677 prediksi yang benar (341 untuk kelas "Bad" dan 336 untuk kelas "Good"), dan 81 prediksi salah (32 False Positive dan 49 False Negative). Pada ROC Curve menunjukkan performa yang sangat baik dengan nilai AUC sebesar 0.96, yang berarti model ini memiliki kemampuan yang sangat kuat dalam membedakan kelas "Good" dan "Bad".
+
+Secara keseluruhan, model Random Forest menunjukkan performa yang sangat baik dengan sedikit kesalahan prediksi, dan kemampuannya untuk memisahkan kelas ditunjukkan oleh AUC yang tinggi. Model ini lebih baik dibandingkan dengan SVM berdasarkan evaluasi ROC dan Confusion Matrix.
+
+Maka dari itu, algoritma Random Forest memiliki Accuracy yang lebih tinggi dengan accuracy 89%. Untuk itu model tersebut yang akan dipilih untuk digunakan. Diharapkan dengan model yang telah dikembangan dapat memprediksi kualitas apel dengan baik menggunakan Random Forest. Alasan mengapa metode Random Forest yang dipilih karena lebih tahan terhadap overfitting, lebih stabil pada data yang kompleks, lebih robust terhadap outliers dan missing data, serta menawarkan interpretasi yang jelas melalui feature importance. Model ini juga cenderung lebih mudah digunakan dan memberikan hasil yang baik tanpa perlu tuning yang ekstensif.
 
 ## Referensi
 1. Sarnita Sadya.(2022). Produksi Apel Indonesia Sebanyak 509.544 Ton pada 2021.
