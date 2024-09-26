@@ -4,8 +4,9 @@
 
 Domain yang dipilih untuk proyek *machine learning* ini adalah **Pertanian** yang meninjau **Predictive Analytics: Kualitas Apel**  
 
-### Latar Belakang
-![foto apel](https://cdn.pixabay.com/photo/2015/10/08/14/14/fruit-977781_960_720.jpg)
+### Latar Belakang!
+
+![Apple](https://github.com/user-attachments/assets/37ce2fed-7d9b-4604-aed0-c6caebb27c34)
 
 Indonesia merupakan negara tropis yang memiliki potensi besar dalam bidang pertanian termasuk buah-buahan. Posisi Indonesia di garis khatulistiwa memberi keutungan geografis karena memungkinkan tumbuhnya beraneka ragam buah.Salah satu buah yang banyak dikonsumsi di Indonesia adalah apel[[1](https://sirisma.unisri.ac.id/berkas/4LAPORAN%20kemajuan_PENELITIAN_GANJAR_HASNA_FISIP2022.pdf)]. Produksi apel di Indonesia tercatat sebanyak 509.544 ton pada 2021. Jumlah tersebut turun 1,35% dibandingkan pada tahun sebelumnya yang sebesar 516.531 ton. Namun, produksi apel dalam negeri masih menghadapi berbagai tantangan, terutama terkait kualitas apel yang dihasilkan. Kualitas apel dapat menurun akibat berbagai faktor, seperti ukuran yang kecil, tingkat kematangan, dan kerenyahan buah. Penurunan kualitas apel dapat menyebabkan kerugian ekonomi bagi petani dan distributor[[2](https://dataindonesia.id/agribisnis-kehutanan/detail/produksi-apel-indonesia-sebanyak-509544-ton-pada-2021)]. Penerapan _predictive analytics_ dalam industri apel dapat memberikan manfaat bagi petani, distributor, dan konsumen. Petani dapat meningkatkan keuntungan dengan meningkatkan kualitas dan hasil panen apel. Distributor dapat mengurangi kerugian dan meningkatkan efisiensi rantai pasokan. Konsumen mendapatkan apel dengan kualitas yang lebih baik dan harga yang lebih stabi[[3](https://doi.org/10.47065/bulletincsr.v3i3.251)]
 
