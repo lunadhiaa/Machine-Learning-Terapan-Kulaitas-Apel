@@ -15,21 +15,18 @@ Pengembangan model prediksi untuk menilai kualitas apel memiliki banyak potensi 
 
 ### Problem Statements
 Berdasarkan latar belakang yang telah dijelaskan, berikut adalah rincian masalah yang dapat diatasi melalui proyek ini:
-- Bagaimana membuat model machine learning yang dapat memprediksi kualitas apel berdasarkan data visual dan sensorik?
-- Apa saja faktor yang mempengaruhi kualitas apel?
-- Bagaimana model dapat membantu petani dan distributor dalam meningkatkan kualitas dan nilai jual apel?
+- Bagaimana membuat model *machine learning* yang dapat memprediksi kualitas apel berdasarkan data visual dan sensorik?
 - Model yang seperti apa yang memiliki akurasi paling baik?
+- Bagaimana model dapat membantu petani dan distributor dalam meningkatkan kualitas dan nilai jual apel?
 
 ### Goals
 Tujuan dari proyek ini adalah:
-- Membuat model machine learning yang dapat memprediksi kualitas apel dengan baik
-- Mengetahui apa saja faktor yang dapat mempengaruhi kualitas apel
-- Mengembangkan aplikasi yang mudah digunakan untuk membantu petani dan distributor dalam menggunakan model machine learning untuk memprediksi kualitas apel.
+- Membuat model machine learning yang dapat memprediksi kualitas apel dengan baik melalui data visualisasi dan sensorik.
 - Membandingkan algoritma model untuk menemukan akurasi terbaik dalam memprediksi kualitas apel.
+- Mengembangkan aplikasi yang mudah digunakan untuk membantu petani dan distributor dalam menggunakan model machine learning untuk memprediksi kualitas apel.
 
 ### Solution Statements
-- Menganalisis data dengan melakukan univariate analysis dan multivariate analysis. Serta mengetahui kolerasi matrix antar fitur dan mendeteksi outlier. 
-- Memahami data dengan visualisasi untuk mengatahui beberapa karakteristik dan faktor yang mempengaruhi kualitas apel. 
+- Menganalisis data dengan melakukan univariate analysis dan multivariate analysis untuk mengetahui kolerasi matrix antar fitur dan mendeteksi outlier. Serta Memahami data dengan visualisasi. 
 - Melakukan proses data cleaning dan normalisai data agar mendapat prediksi yang baik.
 - Membuat beberapa Model prediksi machine learning untuk mendapatkan model yang paling baik dari beberapa model yang telah dibuat untuk prediksi kualitas apel. Diantaranya adalah menggunakan:
     * Support Vector Machine (SVM) adalah algoritma yang digunakan untuk menemukan hyperplane dalam ruang N-dimensi (N - jumlah fitur) yang secara jelas mengklasifikasikan titik data. SVM dapat digunakan untuk menyelesaikan permasalahan klasifikasi, regresi, dan pendeteksian outlier.[[6](https://towardsdatascience.com/support-vector-machine-introduction-to-machine-learning-algorithms-934a444fca47)]
@@ -49,8 +46,6 @@ Tujuan dari proyek ini adalah:
 | Tags | _Computer Science, Education, Food, Data Visualization, Classification, Exploratory Data Analysis_ |
 | Usability | 10.00 |
 
-Tabel 1. Informasi Dataset
-
 Berikut informasi pada dataset: 
 Data yang digunakan dalam pembuatan model merupakan data primer, data ini didapat dari sebuah perusahaan pertanian Amerika, yang disediakan secara publik di kaggle dengan nama datasets yaitu: _Apple Quality_
 
@@ -62,7 +57,7 @@ Data yang digunakan dalam pembuatan model merupakan data primer, data ini didapa
 | 3.0 | -0.657196 |-2.271627 | 1.324874 |-0.097875 | 3.637970 |-3.413761	| 0.790723217  |good |
 | 4.0 | 1.364217 |-1.296612 | -0.384658 | -0.553006 | 3.030874 | -1.303849	| 0.501984036  |good |
 
-Tabel 2. EDA Deskripsi Variabel_
+Tabel 1. EDA Deskripsi Variabel_
 
 Dilihat dari _Tabel 2. EDA Deskripsi Variabel_ dataset ini telah di *bersihkan* dan *normalisasi* terlebih dahulu oleh pembuat, sehingga mudah digunakan dan ramah bagi pemula. 
 - Dataset berupa CSV (Comma-Seperated Values).
@@ -85,12 +80,12 @@ Dari ke 9 fitur dapat dilihat bahwa fitur `A_id` tidak mempengaruhi kualitas bua
 
 ### EDA - Univariate Analysis
 
+![univariate analysis 1a](https://github.com/user-attachments/assets/e9330311-aac9-46f8-8080-a69ea2f4872b)
 
-![Quality Apple](https://i.postimg.cc/GtphjwZv/distribusi-kualitas-apel.png)
-
-Gambar 1a. Analisis Univariat (Data Kategori) 
+Gambar 1a. Analisis Univariat (Data Kategori Apel) 
 
 ![univariate analysis 1b](https://github.com/user-attachments/assets/e9543576-081f-447e-ab7d-d4d4970b3045)
+
 Gambar 1b. Analisis Univariat (Data Numerik) 
 
  Berdasarkan _Gambar 1a_ , dapat dilihat bahwa distribusi data katagorik _Quality_ yang terdiri dari _good_ dan _bad_ kualitas apel, yang mana nilai data **bad** terdiri dari `1928` dan **good** terdiri dari `1862`, yang mana menunjukan perbandingan data yang tidak terlalu jauh. Pada _Gambar 1b,_ untuk data numerik memiliki karakteristik, yaitu:
@@ -105,11 +100,8 @@ Gambar 1b. Analisis Univariat (Data Numerik)
  - Mengurangi rata-rata (mean) dari setiap data point.
  - Membagi hasil pengurangan tersebut dengan standar deviasi data.
  
-
 Pada kasus ini, rata-rata (mean) data "Size" adalah -0.51 dan standar deviasi data "Size" tidak diketahui. Namun, dengan nilai minimum -2 dan maksimum 2, dapat diasumsikan bahwa data "Size" telah diubah skalanya sehingga memiliki mean 0 dan standar deviasi 1. Data numerik lainnya, seperti _"Weight", "Sweetness", "Crunchiness", "Juiciness", "Ripeness", dan "Acidity"_, juga telah dinormalisasi dengan cara yang sama.
 
-
- 
 
 ### EDA - Multivariate Analysis
 
